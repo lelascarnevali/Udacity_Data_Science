@@ -1,0 +1,17 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+jupyter
+notebook
+ipykernel
+python-dotenv
+shap
+aequitas
+spacy
+opencv-python
+torch
+torchvision
+fasthtml
