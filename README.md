@@ -72,10 +72,14 @@ This project uses **[uv](https://github.com/astral-sh/uv)** for fast Python pack
 
 ### Prerequisites
 
+- **Python 3.11+**
 - **uv installed:**
   ```bash
   # macOS/Linux
   curl -LsSf https://astral.sh/uv/install.sh | sh
+  
+  # Verify installation
+  uv --version
   ```
 
 ### Installation Steps
@@ -88,7 +92,7 @@ This project uses **[uv](https://github.com/astral-sh/uv)** for fast Python pack
 
 2. **Create a virtual environment:**
    ```bash
-   uv venv --python 3.11 .venv
+   uv venv --python 3.11
    ```
 
 3. **Activate the environment:**
@@ -98,8 +102,43 @@ This project uses **[uv](https://github.com/astral-sh/uv)** for fast Python pack
 4. **Install dependencies:**
    ```bash
    uv pip install -r requirements.txt
-   uv pip install jupyter
    ```
+
+### Running Jupyter
+
+With the environment activated, launch Jupyter Notebook or JupyterLab:
+
+```bash
+# Jupyter Notebook (classic interface)
+jupyter notebook
+
+# JupyterLab (modern interface)
+jupyter lab
+```
+
+### Main Dependencies
+
+- **Data Science**: numpy, pandas, scipy, scikit-learn
+- **Visualization**: matplotlib, seaborn
+- **Deep Learning**: torch, torchvision
+- **NLP**: spacy
+- **Computer Vision**: opencv-python
+- **Model Explainability**: shap
+- **Jupyter**: jupyter, notebook, ipykernel
+- **Utilities**: python-dotenv, ipywidgets
+
+### Useful Commands
+
+```bash
+# List installed packages
+uv pip list
+
+# Update dependencies
+uv pip install -r requirements.txt --upgrade
+
+# Deactivate environment
+deactivate
+```
 
 ## Repository Structure
 
