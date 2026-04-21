@@ -59,11 +59,8 @@ uv --version
 # Create an isolated virtualenv managed by uv (creates `.venv`)
 uv venv --python 3.11 .venv
 
-# Install pinned dependencies from requirements.txt
-uv pip install -r requirements.txt
-
-# (Optional) Install Jupyter if you need it
-uv pip install jupyter
+# Install all dependencies from pyproject.toml
+uv sync
 
 # Activate the venv for interactive shells
 source .venv/bin/activate
@@ -83,7 +80,7 @@ This project uses **[uv](https://github.com/astral-sh/uv)** for fast Python pack
 
 ### Reproducible lockfile
 
-This repo includes `uv.lock` to pin transitive dependencies. To regenerate the lockfile after changing installed packages or `requirements.txt`, run:
+This repo includes `uv.lock` to pin transitive dependencies. To regenerate the lockfile after changing `pyproject.toml`, run:
 
 ```bash
 # from the repository root
@@ -109,21 +106,16 @@ jupyter lab
 
 - **Data Science**: numpy, pandas, scipy, scikit-learn
 - **Visualization**: matplotlib, seaborn
-- **Deep Learning**: torch, torchvision
-- **NLP**: spacy
-- **Computer Vision**: opencv-python
-- **Model Explainability**: shap
 - **Jupyter**: jupyter, notebook, ipykernel
-- **Utilities**: python-dotenv, ipywidgets
 
 ### Useful Commands
 
 ```bash
-# List installed packages (via uv-managed pip)
+# List installed packages
 uv pip list
 
-# Upgrade from requirements
-uv pip install -r requirements.txt --upgrade
+# Add a new dependency
+uv add <package>
 
 # Regenerate lockfile
 uv lock
@@ -151,7 +143,8 @@ deactivate
 ├── 5_Unsupervised_ML_and_Recommendation_Systems/
 │   ├── exercises/          # Notebooks and scripts for hands-on practice
 │   └── project/            # Project: Recommendation System
-├── requirements.txt
+├── pyproject.toml
+├── uv.lock
 └── .gitignore
 ```
 
