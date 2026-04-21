@@ -43,27 +43,33 @@ Advanced data science topics: unsupervised learning, clustering, dimensionality 
 
 ---
 
-## Quickstart
+## Quickstart (uv-managed)
 
-Get up and running fast on macOS with `uv` and Jupyter:
+This repository uses `uv` to manage virtualenvs and packages. Preferred workflow:
 
 ```bash
-# Clone and enter repository
+# Clone repository and enter folder
 git clone git@pessoal.github.com:lelascarnevali/Udacity_Data_Science.git
 cd Udacity_Data_Science
 
-# Create and activate Python virtual env
-uv venv --python 3.11 .venv
-source .venv/bin/activate
+# Install uv (if not installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv --version
 
-# Install dependencies and Jupyter
+# Create an isolated virtualenv managed by uv (creates `.venv`)
+uv venv --python 3.11 .venv
+
+# Install pinned dependencies from requirements.txt
 uv pip install -r requirements.txt
+
+# (Optional) Install Jupyter if you need it
 uv pip install jupyter
 
-# Launch notebooks
-jupyter notebook
-# or
-jupyter lab
+# Activate the venv for interactive shells
+source .venv/bin/activate
+
+# Run notebooks
+jupyter notebook   # or `jupyter lab`
 ```
 
 ## Environment Setup
@@ -72,37 +78,20 @@ This project uses **[uv](https://github.com/astral-sh/uv)** for fast Python pack
 
 ### Prerequisites
 
-- **Python 3.11+**
-- **uv installed:**
-  ```bash
-  # macOS/Linux
-  curl -LsSf https://astral.sh/uv/install.sh | sh
-  
-  # Verify installation
-  uv --version
-  ```
+- **Python 3.11+** (or adjust `--python` to a compatible interpreter)
+- **uv installed** — install with the curl command above and verify with `uv --version`.
 
-### Installation Steps
+### Reproducible lockfile
 
-1. **Clone the repository:**
-   ```bash
-   git clone git@pessoal.github.com:lelascarnevali/Udacity_Data_Science.git
-   cd Udacity_Data_Science
-   ```
+This repo includes `uv.lock` to pin transitive dependencies. To regenerate the lockfile after changing installed packages or `requirements.txt`, run:
 
-2. **Create a virtual environment:**
-   ```bash
-   uv venv --python 3.11
-   ```
-
-3. **Activate the environment:**
-   - macOS/Linux: `source .venv/bin/activate`
-   - Windows: `.venv\Scripts\activate`
-
-4. **Install dependencies:**
-   ```bash
-   uv pip install -r requirements.txt
-   ```
+```bash
+# from the repository root
+uv lock
+# commit the updated uv.lock
+git add uv.lock
+git commit -m "Regenerate uv.lock"
+```
 
 ### Running Jupyter
 
@@ -130,13 +119,19 @@ jupyter lab
 ### Useful Commands
 
 ```bash
-# List installed packages
+# List installed packages (via uv-managed pip)
 uv pip list
 
-# Update dependencies
+# Upgrade from requirements
 uv pip install -r requirements.txt --upgrade
 
-# Deactivate environment
+# Regenerate lockfile
+uv lock
+
+# Run a command inside the venv without activating
+uv run python -c "import sys; print(sys.executable)"
+
+# Deactivate (when activated)
 deactivate
 ```
 
