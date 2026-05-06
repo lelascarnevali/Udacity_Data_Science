@@ -7,3 +7,4 @@ __pycache__/
 reports/
 .vscode/
 .python-version
+2_Introduction_to_Data_Science_and_Supervised_ML/project/data/raw/*.csv

@@ -14,7 +14,7 @@ Learn core data science concepts and apply supervised machine learning models in
 - **Model Evaluation:** Alternative metrics beyond default accuracy for real-world datasets.
 - **Model Interpretability and Fairness:** Feature importances, SHAP values, and the Aequitas framework.
 - **Communicating to Stakeholders:** GitHub repository and Medium blog post.
-- **Project: Data Science Blog Post**
+- **Project: Data Science Blog Post - CMS Hospital Quality Analysis**
 
 ### 3. Software Engineering for Data Scientists
 Prepare for advanced data science work with software engineering best practices. Explore OOP, testing, reproducibility, and build a FastHTML dashboard.
@@ -106,6 +106,8 @@ jupyter lab
 
 - **Data Science**: numpy, pandas, scipy, scikit-learn
 - **Visualization**: matplotlib, seaborn
+- **Model Interpretability**: shap
+- **Bias / Fairness**: aequitas
 - **Jupyter**: jupyter, notebook, ipykernel
 
 ### Useful Commands

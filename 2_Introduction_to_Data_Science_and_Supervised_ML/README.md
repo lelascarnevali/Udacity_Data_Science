@@ -16,7 +16,7 @@ Learn core data science concepts and apply supervised machine learning models in
 
 ## Project
 
-**Project: Data Science Blog Post**
+**Project: Data Science Blog Post - CMS Hospital Quality Analysis**
 
 Complete the CRISP-DM process with a dataset of your choice, and deploy your findings in the format of a blog post.
 
