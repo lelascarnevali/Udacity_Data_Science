@@ -106,6 +106,7 @@ jupyter lab
 
 - **Data Science**: numpy, pandas, scipy, scikit-learn
 - **Visualization**: matplotlib, seaborn
+- **Computer Vision**: opencv-python-headless
 - **Model Interpretability**: shap
 - **Bias / Fairness**: aequitas
 - **Jupyter**: jupyter, notebook, ipykernel
