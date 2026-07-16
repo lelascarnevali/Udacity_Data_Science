@@ -17,14 +17,26 @@ Advanced data science topics related to unsupervised machine learning. Apply tec
 
 **Project: Recommendation System**
 
-Implement a system for recommending technical articles from the IBM Watson platform, using ranking-based, content-based, and collaborative filtering approaches.
+The project implementation builds recommendations for technical articles from
+the IBM Watson Studio Community using rank-based recommendations, user-user
+collaborative filtering, TF-IDF and KMeans content groups, and SVD article
+similarity. It also documents cold-start behavior and offline and online
+evaluation strategies.
 
-See [`project/README.md`](project/README.md) for details.
+See [`project/README.md`](project/README.md) for the dataset, environment setup,
+execution commands, rubric contract, and validation status.
 
 ## Structure
 
 ```
 .
-├── exercises/      # Notebooks and scripts for hands-on practice
-└── project/        # Project: Recommendation System
+├── exercises/                              # Course practice notebooks and data
+└── project/
+    ├── README.md                           # Project guide and validation contract
+    ├── Recommendations_with_IBM.ipynb      # Main project notebook
+    ├── project_tests.py                    # Udacity helper checks
+    ├── top_5.p, top_10.p, top_20.p         # Rank-based test fixtures
+    └── data/
+        ├── README.md                       # Dataset documentation
+        └── user-item-interactions.csv      # IBM Community interactions
 ```
